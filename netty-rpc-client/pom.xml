@@ -2,17 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>rookieRPC</artifactId>
+        <groupId>com.hdz</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.hdz</groupId>
-    <artifactId>rookieRPC</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>netty-rpc-client</module>
-        <module>netty-rpc-common</module>
-        <module>netty-rpc-server</module>
-    </modules>
+    <artifactId>netty-rpc-client</artifactId>
 
 
 </project>
