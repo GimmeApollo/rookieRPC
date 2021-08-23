@@ -92,6 +92,7 @@ public class RpcFuture implements Future<Object>{
         private final int done = 1;
         private final int pending = 0;  //等待
 
+        //这里get没有次数限制
         @Override
         protected boolean tryAcquire(int arg) {
             return getState() == done;

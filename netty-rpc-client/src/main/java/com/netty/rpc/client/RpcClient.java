@@ -55,11 +55,14 @@ public class RpcClient implements DisposableBean {
     }
 
     //关闭客户端
-    @Override
-    public void destroy() throws Exception {
+    public void stop() {
         threadPoolExecutor.shutdown();
         serviceDiscovery.stop();
         ConnectionManager.getInstance().stop();
+    }
 
+    @Override
+    public void destroy() throws Exception {
+        this.stop();
     }
 }

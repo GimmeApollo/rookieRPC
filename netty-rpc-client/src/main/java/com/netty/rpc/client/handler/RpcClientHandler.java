@@ -32,6 +32,7 @@ public class RpcClientHandler extends SimpleChannelInboundHandler<RpcResponse> {
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         super.channelActive(ctx);
+        logger.info("channelActive:"+channel.id());
         this.remotePeer = this.channel.remoteAddress();     //记录远程的SocketAddress
     }
 
@@ -46,7 +47,7 @@ public class RpcClientHandler extends SimpleChannelInboundHandler<RpcResponse> {
     @Override
     public void channelRead0(ChannelHandlerContext ctx, RpcResponse response) throws Exception {
         String requestId = response.getRequestId();
-        logger.debug("Receive response: " + requestId);
+        logger.debug("request {} Receive response.", requestId);
         RpcFuture rpcFuture = pendingRPC.get(requestId);
         if (rpcFuture != null) {
             pendingRPC.remove(requestId);
@@ -94,6 +95,7 @@ public class RpcClientHandler extends SimpleChannelInboundHandler<RpcResponse> {
         pendingRPC.put(request.getRequestId(), rpcFuture);
         try {
             //每个出站操作都将返回一个ChannelFuture，ChannelFutureListener将在操作完成时被通知该操作是成功了还是出错了。
+            logger.info("Send request {}",request.getRequestId());
             ChannelFuture channelFuture = channel.writeAndFlush(request).sync();
             //TODO：这里可以改为ChannelFutureListener()
             if (!channelFuture.isSuccess()) {

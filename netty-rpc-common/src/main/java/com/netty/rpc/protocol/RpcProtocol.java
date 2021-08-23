@@ -72,4 +72,9 @@ public class RpcProtocol {
     public void setServiceInfoList(List<RpcServiceInfo> serviceInfoList) {
         this.serviceInfoList = serviceInfoList;
     }
+
+    @Override
+    public String toString() {
+        return toJson();
+    }
 }
