@@ -71,6 +71,7 @@ public class RpcClientHandler extends SimpleChannelInboundHandler<RpcResponse> {
         //处理IdleStateEvent事件
         if (evt instanceof IdleStateEvent) {
             //TODO:Send ping
+//            logger.info("IdleStateEvent事件:"+((IdleStateEvent) evt).state().toString());
             sendRequest(Beat.BEAT_PING);
             logger.debug("Client send beat-ping to " + remotePeer);
         } else {

@@ -14,6 +14,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -40,13 +41,14 @@ public class RpcClientTest {
         System.out.println(result);
     }
 
-    //hello版本2测试
+    //hello版本2测试(可测试心跳)
     @Test
-    public void helloTest2() {
+    public void helloTest2() throws InterruptedException{
         HelloService helloService = rpcClient.createService(HelloService.class, "2.0");
         Person person = new Person("Yong", "Huang");
         String result = helloService.hello(person);
         System.out.println(result);
+        Thread.sleep(10000);
     }
 
     @Test
@@ -80,11 +82,12 @@ public class RpcClientTest {
     public void rpcAsyncTest() throws Exception{
 //        final RpcClient rpcClient = new RpcClient("127.0.0.1:2181");
 
-        int threadNum = 1;
+        int threadNum = 5;
         final int requestNum = 10;
         Thread[] threads = new Thread[threadNum];
 
         long startTime = System.currentTimeMillis();
+        Random random=new Random();
         //benchmark for async call
         for (int i = 0; i < threadNum; ++i) {
             threads[i] = new Thread(new Runnable() {
@@ -93,18 +96,22 @@ public class RpcClientTest {
                     for (int i = 0; i < requestNum; i++) {
                         try {
                             RpcService client = rpcClient.createAsyncService(HelloService.class, "2.0");
-                            RpcFuture helloFuture = client.call("hello", Integer.toString(i));
-                            String result = (String) helloFuture.get(3000, TimeUnit.MILLISECONDS);
-                            if (!result.equals("Hi " + i)) {
-                                System.out.println("error = " + result);
-                            } else {
-                                System.out.println("result = " + result);
+                            StringBuilder sb=new StringBuilder();
+                            int time=random.nextInt(10);
+                            for (int j = 0; j < random.nextInt(10); j++) {
+                                sb.append("s");
                             }
-                            try {
-                                Thread.sleep(10 * 1000);
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
+                            sb.append(time);
+                            String s=String.valueOf(random.nextInt(199))+sb.toString();
+                            RpcFuture helloFuture = client.call("hello",s);
+                            String result = (String) helloFuture.get(5000, TimeUnit.MILLISECONDS);
+                            System.out.println("预期数字=" + s + "\nresult=" + result);
+
+//                            try {
+//                                Thread.sleep(10 * 1000);
+//                            } catch (InterruptedException e) {
+//                                e.printStackTrace();
+//                            }
                         } catch (Exception e) {
                             System.out.println(e.toString());
                         }
