@@ -50,9 +50,9 @@ public class RpcServerHandler extends SimpleChannelInboundHandler<RpcRequest> {
                 try {
                     Object result = handle(request);
                     response.setResult(result);
-                } catch (Throwable t) {
+                } catch (Exception t) {
                     response.setError(t.toString());
-                    logger.error("RPC Server handle request error", t);
+                    logger.error("RPC Server handle request " +request.getRequestId() +" error", t);
                 }
                 ctx.writeAndFlush(response).addListener(new ChannelFutureListener() {
                     @Override
@@ -64,7 +64,7 @@ public class RpcServerHandler extends SimpleChannelInboundHandler<RpcRequest> {
         });
     }
 
-    private Object handle(RpcRequest request) throws Throwable {
+    private Object handle(RpcRequest request) throws Exception {
         String className = request.getClassName();
         String version = request.getVersion();
         String serviceKey = ServiceUtil.makeServiceKey(className, version);

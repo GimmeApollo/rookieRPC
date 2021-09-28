@@ -26,6 +26,9 @@ public class RpcFuture implements Future<Object>{
     private RpcResponse response;   //暂时加上
     private long startTime;
     private long responseTimeThreshold = 5000;
+    private List<AsyncRPCCallback> pendingCallbacks = new ArrayList<>();
+    private ReentrantLock lock = new ReentrantLock();
+
     //
     public RpcFuture(RpcRequest request) {
         this.sync = new Sync();
@@ -67,11 +70,53 @@ public class RpcFuture implements Future<Object>{
     public void done(RpcResponse reponse) {
         this.response = reponse;
         sync.release(1);
+        //完成函数回调
+        invokeCallbacks();
         // Threshold
         long responseTime = System.currentTimeMillis() - startTime;
         if (responseTime > this.responseTimeThreshold) {
             logger.warn("Service response time is too slow. Request id = " + reponse.getRequestId() + ". Response Time = " + responseTime + "ms");
         }
+    }
+
+    public RpcFuture addCallback(AsyncRPCCallback callback) {
+        lock.lock();
+        try {
+            //如果已经完成就直接调用
+            if (isDone()) {
+                runCallback(callback);
+            } else {
+                this.pendingCallbacks.add(callback);
+            }
+        } finally {
+            lock.unlock();
+        }
+        return this;
+    }
+
+    private void invokeCallbacks() {
+        lock.lock();
+        try {
+            for (final AsyncRPCCallback callback : pendingCallbacks) {
+                runCallback(callback);
+            }
+        } finally {
+            lock.unlock();
+        }
+    }
+
+    private void runCallback(final AsyncRPCCallback callback) {
+        final RpcResponse res = this.response;
+        RpcClient.submit(new Runnable() {
+            @Override
+            public void run() {
+                if (res.getError()==null) {
+                    callback.success(res.getResult());
+                } else {
+                    callback.fail(new RuntimeException("Response error", new Exception(res.getError())));
+                }
+            }
+        });
     }
 
     @Override

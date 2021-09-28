@@ -1,0 +1,93 @@
+2021-09-05 18:59:44 ERROR RpcServerHandler:55 - RPC Server handle request error
+java.lang.IllegalArgumentException: Cannot find matching method/constructor
+	at com.netty.rpc.server.service.HelloServiceImpl2$$FastClassByCGLIB$$d2385b4d.invoke(<generated>)
+	at com.netty.rpc.server.core.RpcServerHandler.handle(RpcServerHandler.java:102)
+	at com.netty.rpc.server.core.RpcServerHandler.access$100(RpcServerHandler.java:24)
+	at com.netty.rpc.server.core.RpcServerHandler$1.run(RpcServerHandler.java:51)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:835)
+2021-09-05 18:59:44 ERROR RpcServerHandler:55 - RPC Server handle request error
+java.lang.IllegalArgumentException: Cannot find matching method/constructor
+	at com.netty.rpc.server.service.HelloServiceImpl2$$FastClassByCGLIB$$d2385b4d.invoke(<generated>)
+	at com.netty.rpc.server.core.RpcServerHandler.handle(RpcServerHandler.java:102)
+	at com.netty.rpc.server.core.RpcServerHandler.access$100(RpcServerHandler.java:24)
+	at com.netty.rpc.server.core.RpcServerHandler$1.run(RpcServerHandler.java:51)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:835)
+2021-09-05 18:59:44 ERROR RpcServerHandler:55 - RPC Server handle request error
+java.lang.IllegalArgumentException: Cannot find matching method/constructor
+	at com.netty.rpc.server.service.HelloServiceImpl2$$FastClassByCGLIB$$d2385b4d.invoke(<generated>)
+	at com.netty.rpc.server.core.RpcServerHandler.handle(RpcServerHandler.java:102)
+	at com.netty.rpc.server.core.RpcServerHandler.access$100(RpcServerHandler.java:24)
+	at com.netty.rpc.server.core.RpcServerHandler$1.run(RpcServerHandler.java:51)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:835)
+2021-09-05 18:59:44 ERROR RpcServerHandler:55 - RPC Server handle request error
+java.lang.IllegalArgumentException: Cannot find matching method/constructor
+	at com.netty.rpc.server.service.HelloServiceImpl2$$FastClassByCGLIB$$d2385b4d.invoke(<generated>)
+	at com.netty.rpc.server.core.RpcServerHandler.handle(RpcServerHandler.java:102)
+	at com.netty.rpc.server.core.RpcServerHandler.access$100(RpcServerHandler.java:24)
+	at com.netty.rpc.server.core.RpcServerHandler$1.run(RpcServerHandler.java:51)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:835)
+2021-09-05 18:59:44 ERROR RpcServerHandler:55 - RPC Server handle request error
+java.lang.IllegalArgumentException: Cannot find matching method/constructor
+	at com.netty.rpc.server.service.HelloServiceImpl2$$FastClassByCGLIB$$d2385b4d.invoke(<generated>)
+	at com.netty.rpc.server.core.RpcServerHandler.handle(RpcServerHandler.java:102)
+	at com.netty.rpc.server.core.RpcServerHandler.access$100(RpcServerHandler.java:24)
+	at com.netty.rpc.server.core.RpcServerHandler$1.run(RpcServerHandler.java:51)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:835)
+2021-09-05 18:59:44 ERROR RpcServerHandler:55 - RPC Server handle request error
+java.lang.IllegalArgumentException: Cannot find matching method/constructor
+	at com.netty.rpc.server.service.HelloServiceImpl2$$FastClassByCGLIB$$d2385b4d.invoke(<generated>)
+	at com.netty.rpc.server.core.RpcServerHandler.handle(RpcServerHandler.java:102)
+	at com.netty.rpc.server.core.RpcServerHandler.access$100(RpcServerHandler.java:24)
+	at com.netty.rpc.server.core.RpcServerHandler$1.run(RpcServerHandler.java:51)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:835)
+2021-09-05 18:59:44 ERROR RpcServerHandler:55 - RPC Server handle request error
+java.lang.IllegalArgumentException: Cannot find matching method/constructor
+	at com.netty.rpc.server.service.HelloServiceImpl2$$FastClassByCGLIB$$d2385b4d.invoke(<generated>)
+	at com.netty.rpc.server.core.RpcServerHandler.handle(RpcServerHandler.java:102)
+	at com.netty.rpc.server.core.RpcServerHandler.access$100(RpcServerHandler.java:24)
+	at com.netty.rpc.server.core.RpcServerHandler$1.run(RpcServerHandler.java:51)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:835)
+2021-09-05 18:59:44 ERROR RpcServerHandler:55 - RPC Server handle request error
+java.lang.IllegalArgumentException: Cannot find matching method/constructor
+	at com.netty.rpc.server.service.HelloServiceImpl2$$FastClassByCGLIB$$d2385b4d.invoke(<generated>)
+	at com.netty.rpc.server.core.RpcServerHandler.handle(RpcServerHandler.java:102)
+	at com.netty.rpc.server.core.RpcServerHandler.access$100(RpcServerHandler.java:24)
+	at com.netty.rpc.server.core.RpcServerHandler$1.run(RpcServerHandler.java:51)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:835)
+2021-09-05 18:59:44 ERROR RpcServerHandler:55 - RPC Server handle request error
+java.lang.IllegalArgumentException: Cannot find matching method/constructor
+	at com.netty.rpc.server.service.HelloServiceImpl2$$FastClassByCGLIB$$d2385b4d.invoke(<generated>)
+	at com.netty.rpc.server.core.RpcServerHandler.handle(RpcServerHandler.java:102)
+	at com.netty.rpc.server.core.RpcServerHandler.access$100(RpcServerHandler.java:24)
+	at com.netty.rpc.server.core.RpcServerHandler$1.run(RpcServerHandler.java:51)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:835)
+2021-09-05 18:59:44 ERROR RpcServerHandler:55 - RPC Server handle request error
+java.lang.IllegalArgumentException: Cannot find matching method/constructor
+	at com.netty.rpc.server.service.HelloServiceImpl2$$FastClassByCGLIB$$d2385b4d.invoke(<generated>)
+	at com.netty.rpc.server.core.RpcServerHandler.handle(RpcServerHandler.java:102)
+	at com.netty.rpc.server.core.RpcServerHandler.access$100(RpcServerHandler.java:24)
+	at com.netty.rpc.server.core.RpcServerHandler$1.run(RpcServerHandler.java:51)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:835)
+2021-09-05 21:08:31 ERROR RpcDecoder:46 - Decode error: java.lang.IllegalStateException: Reading from a byte array threw an IOException (should never happen).
+2021-09-05 21:08:33 ERROR RpcDecoder:46 - Decode error: java.lang.IllegalStateException: Reading from a byte array threw an IOException (should never happen).
+2021-09-05 21:08:35 ERROR RpcDecoder:46 - Decode error: java.lang.IllegalStateException: Reading from a byte array threw an IOException (should never happen).

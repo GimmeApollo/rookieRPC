@@ -1,0 +1,18 @@
+2021-09-05 16:59:30 ERROR RpcClientHandler:64 - Client caught exception: java.lang.IndexOutOfBoundsException: readerIndex(0) + length(100) exceeds writerIndex(50): PooledUnsafeDirectByteBuf(ridx: 0, widx: 50, cap: 1024)
+2021-09-05 16:59:30 ERROR RpcClientHandler:64 - Client caught exception: java.lang.IndexOutOfBoundsException: readerIndex(0) + length(100) exceeds writerIndex(50): PooledUnsafeDirectByteBuf(ridx: 0, widx: 50, cap: 1024)
+2021-09-05 19:49:50 ERROR PathChildrenCache:571 - 
+java.lang.IllegalStateException: instance must be started before calling this method
+	at org.apache.curator.shaded.com.google.common.base.Preconditions.checkState(Preconditions.java:176)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.getChildren(CuratorFrameworkImpl.java:391)
+	at org.apache.curator.framework.recipes.cache.PathChildrenCache.refresh(PathChildrenCache.java:508)
+	at org.apache.curator.framework.recipes.cache.RefreshOperation.invoke(RefreshOperation.java:35)
+	at org.apache.curator.framework.recipes.cache.PathChildrenCache$9.run(PathChildrenCache.java:773)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:835)
