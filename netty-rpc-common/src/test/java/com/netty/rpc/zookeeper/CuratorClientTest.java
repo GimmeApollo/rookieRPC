@@ -16,7 +16,7 @@ public class CuratorClientTest {
         CuratorClient client = new CuratorClient("127.0.0.1:2181");
 //        System.out.println(client.getData("/registry/data"));
         System.out.println((client.getChildren("/registry")));
-        System.out.println(new String(client.getData("/registry/data-15354120250000000401")));
+        System.out.println(new String(client.getData("/registry/data-13626436260000000498")));
     }
 
     @Test

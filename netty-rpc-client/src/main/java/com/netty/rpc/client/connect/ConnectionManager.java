@@ -99,6 +99,7 @@ public class ConnectionManager {
             connectServerNode(rpcProtocol);
         } else if (type == PathChildrenCacheEvent.Type.CHILD_UPDATED) {
             //TODO We may don't need to reconnect remote server if the server'IP and server'port are not changed
+            //TODO 这里不对，rpcProtocol是同一个
             removeAndCloseHandler(rpcProtocol);
             connectServerNode(rpcProtocol);
         } else if (type == PathChildrenCacheEvent.Type.CHILD_REMOVED) {
