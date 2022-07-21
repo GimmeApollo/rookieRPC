@@ -18,11 +18,8 @@ public class ThreadPoolUtil {
                 60L,
                 TimeUnit.SECONDS,
                 new LinkedBlockingQueue<Runnable>(1000),
-                new ThreadFactory() {
-                    @Override
-                    public Thread newThread(Runnable r) {
-                        return new Thread(r, "netty-rpc-" + serviceName + "-" + r.hashCode());  //给线程加个名字
-                    }
+                r -> {
+                    return new Thread(r, "netty-rpc-" + serviceName + "-" + r.hashCode());  //给线程加个名字
                 },
                 new ThreadPoolExecutor.AbortPolicy());      //TODO:合适不
 
